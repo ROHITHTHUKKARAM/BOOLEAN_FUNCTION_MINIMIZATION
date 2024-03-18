@@ -1,6 +1,6 @@
 # BOOLEAN_FUNCTION_MINIMIZATION
 
-**AIM:**
+# AIM:
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
 
@@ -8,17 +8,33 @@ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
 
 F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
-**Equipment Required:**
+# Equipment Required:
 
 Hardware – PCs, Cyclone II , USB flasher
 
-**Software – Quartus prime**
+# Software – Quartus prime
 
-**Theory**
+# Theory
+Boolean function minimization is a fundamental concept in digital logic design aimed at reducing the complexity of logical expressions while maintaining their functionality. Here are a few theoretical perspectives on Boolean function minimization:
 
-**Logic Diagram**
+# Karnaugh Maps (K-Maps):
+Karnaugh Maps provide a graphical method for minimizing Boolean functions. They visually represent all possible combinations of input variables and their corresponding output values. By identifying adjacent groupings of 1s (or 0s) in the map, you can derive simplified expressions. This method is particularly useful for functions with a small number of variables, as it can become impractical for larger functions.
 
-**Procedure**
+# Quine-McCluskey Algorithm:
+The Quine-McCluskey algorithm is a systematic approach to minimizing Boolean functions. It involves systematically combining minterms (or maxterms) to identify prime implicants, which are the smallest possible groupings that cover all essential terms. These prime implicants are then used to derive the minimized expression. While more computationally intensive compared to K-Maps, the Quine-McCluskey algorithm is efficient for functions with a larger number of variables.
+
+# Implicant-Based Minimization:
+Boolean function minimization can also be approached by identifying essential prime implicants and eliminating redundant terms. Essential prime implicants are those that cover output states not covered by any other implicant. Redundant terms, on the other hand, can be eliminated if they are subsumed by other terms or combinations of terms. This approach is often used in combination with K-Maps or the Quine-McCluskey algorithm.
+
+# Algebraic Manipulation:
+Boolean functions can also be minimized using algebraic manipulation techniques. These techniques involve applying Boolean algebra laws such as absorption, distribution, and complementation to simplify expressions. While algebraic manipulation can be intuitive for some functions, it may not always result in the most optimized expressions, especially for functions with many variables.
+
+# Heuristic Methods:
+In addition to the systematic approaches mentioned above, heuristic methods can also be employed for Boolean function minimization. These methods often involve iterative algorithms that attempt to optimize expressions based on predefined criteria such as minimizing the number of terms or reducing the number of literals. Genetic algorithms, simulated annealing, and tabu search are examples of heuristic methods used in Boolean function minimization.
+
+Overall, Boolean function minimization is a multifaceted topic with various methods and techniques available, each with its advantages and limitations. The choice of method depends on factors such as the complexity of the function, the number of variables involved, and the desired optimization criteria.
+
+# Procedure
 
 1.	Type the program in Quartus software.
 
@@ -31,22 +47,34 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
+# Program:
+```
+module exmp2(E ,F, A, B, C, D);
+output E, F;
+input A, B, C ,D;
+assign E = A || (B && C) || ((!B) && D);
+assign F = ((!B) && C) || (B && (!C) && (!D));
+endmodule
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+```
 
-Developed by: RegisterNumber:*/
+# Developed by:Rohith T 
+# RegisterNumber:212223040173
 
 
-**RTL realization**
+# RTL realization:
+![image](https://github.com/ROHITHTHUKKARAM/BOOLEAN_FUNCTION_MINIMIZATION/assets/159523335/f96bae79-f665-49ce-889c-a50c178ef96c)
 
-**Output:**
+# Truth Table:
+![image](https://github.com/ROHITHTHUKKARAM/BOOLEAN_FUNCTION_MINIMIZATION/assets/159523335/d21d24a6-e9fc-48e6-add8-dc47f363a1fa)
+![image](https://github.com/ROHITHTHUKKARAM/BOOLEAN_FUNCTION_MINIMIZATION/assets/159523335/b3147b20-06f4-4755-a791-08e1f712725d)
 
-**RTL**
 
-**Timing Diagram**
+# Timing:
+![image](https://github.com/ROHITHTHUKKARAM/BOOLEAN_FUNCTION_MINIMIZATION/assets/159523335/a6fdff6a-b370-440c-8831-d8b9e9ea9608)
 
-**Result:**
+
+# Result:
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
